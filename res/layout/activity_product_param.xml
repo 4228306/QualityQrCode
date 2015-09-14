@@ -1,0 +1,32 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+    <TableLayout
+	    android:id="@+id/params_tb"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="10dp"
+	    android:layout_marginBottom="40dp"
+	    android:layout_marginLeft="5dp"
+	    android:layout_marginRight="5dp"
+	    android:background="@color/tb_bg"
+	    android:stretchColumns="1,2,3"
+	    android:shrinkColumns="1,2,3">
+			   <TableRow>
+			        <TextView
+			            style="@style/td1_1"
+			            android:text="@string/indexNum" />
+			        <TextView
+			            style="@style/td1_1"
+			            android:text="@string/p_prodParamName" />
+			        <TextView
+			            style="@style/td1_1"
+			            android:text="@string/p_prodParamAverage" />
+			        <TextView
+			            style="@style/td1_1"
+			            android:text="@string/p_prodParamStdDeviation" />
+			    </TableRow>
+	    </TableLayout>
+
+</ScrollView>

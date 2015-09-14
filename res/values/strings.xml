@@ -1,0 +1,202 @@
+<resources>
+	<string name="app_name">电子元器件质量信息平台</string>
+	<string name="app_name1">电子元器件</string>
+	<string name="app_name2">质量信息平台</string>
+    <string name="action_settings">设置</string>
+    <string name="userName">用户名:</string>
+    <string name="userName_tips">请输入用户名</string>
+    <string name="password">密&#160;码:</string>
+    <string name="password_tips">请输入密码</string>
+    <string name="password_1">确认:</string>
+    <string name="password1_tips">请再次输入密码</string>
+    <string name="save_ps">记住密码</string>
+    <string name="name">姓名:</string>
+    <string name="name_tips">请输入姓名</string>
+    <string name="auto_login">自动登录</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="register_wel">欢迎注册</string>
+    <string name="register_tips">还没有帐号？请注册</string>
+    <string name="sex">性别:</string>
+    <string name="man">男</string>
+    <string name="woman">女</string>
+    <string name="email">邮箱:</string>
+    <string name="phone">电话:</string>
+    <string name="scan_tips">将二维码图片对准扫描框即可自动扫描</string>
+    <string name="home_page">(进入首页)</string>
+    
+    
+    <string name="expand">&lt;&lt;展开</string>
+    <string name="shrink">&lt;&lt;收起</string>
+    <string name="p_baseInfo">基本信息</string>
+    <string name="p_exInfo">扩展信息</string>
+    <string name="p_prodInfo">生产制造过程信息</string>
+    <string name="p_finalInfo">设计定型信息</string>
+    <string name="p_qualityInfo">质量信息</string>
+    <string name="p_supplyInfo">供货信息</string>
+    <string name="p_classfyInfo">国内同类产品信息</string>
+    <string name="p_link">信息平台</string>
+    <string name="p_link_tips">点击访问</string>
+    <string name="p_linkUrl">http://www.cepreicloud.com/rdc/QrTest/show.html</string>
+    <string name="p_linkUrl1">http://www.cepreicloud.com/rdc/QrTest/show.html</string>
+    <string name="about_us">    本系统全面提供国内各类别电子元器件生产单位、产品基础信息及质量信息，各用户利用本系统可开展：\n    （1）元器件生产企业：可全面展示企业及产品信息详细信息，推荐新产品，在线销售元器件及相关投诉等活动。\n    （2）元器件使用单位：可进行元器件产品选型，质量信息追溯，元器件采购，需求信息发布，相关投诉及逐条针对元器件使用清单的审核、停产预警、国产化替代等高级信息定制等服务。</string>
+    
+    
+    <string name="p_name">产品名称</string>
+    <string name="p_type">产品型号</string>
+    <string name="p_specDetial">详细规格</string>
+	<string name="p_company">生产单位</string>
+    <string name="p_standard">七专技术协议</string>
+    <string name="p_std">总规范号</string>
+    <string name="p_stdDetail">详细规范号</string>
+	<string name="p_prodLine">生产线</string>
+	<string name="p_prodLineSta">生产线情况</string>
+	<string name="p_prodDate">生产日期</string>
+	<string name="p_batchNum">批次号</string>
+	<string name="p_manufactureQg1">质量保证等级</string>
+	<string name="p_manufactureQg">质量控制等级</string>
+	<string name="p_reQg">质量预计等级</string>
+	<string name="p_failQg">失效率等级</string>
+	<string name="p_params">主要性能参数</string>
+	<string name="p_corrs">国内外替代</string>
+	<string name="p_photo">形貌图</string>
+	<string name="p_shapeChart">尺寸图</string>
+	<string name="p_encap">封装形式</string>
+	<string name="p_material">原材料</string>
+	<string name="p_materialPis">主要原材料清单</string>
+	<string name="p_materialName">原材料名称</string>
+	<string name="p_materialType">型号规格</string>
+	<string name="p_materialCompany">供应厂商</string>
+	<string name="p_materialPi">批号</string>
+	<string name="p_materialReport">主要原材料检验报告</string>
+	<string name="p_prodData">生产数据</string>
+	<string name="p_prodParams">关键参数一致性情况</string>
+	<string name="p_prodParamName">参数</string>
+	<string name="p_prodParamAverage">均值</string>
+	<string name="p_prodParamStdDeviation">标准差</string>
+	<string name="p_prodProcessData">主要工序生产数据</string>
+	<string name="p_prodProcessYield">工序成品率</string>
+	<string name="p_prodProcess">工序名称</string>
+	<string name="p_prodYield">成品率（%）</string>
+	<string name="p_filters">筛选试验</string> 
+	<string name="p_filterCondition">筛选条件</string>
+	<string name="p_filterReport">筛选报告</string>
+	<string name="p_forbidTechnics">禁限用工艺</string>
+	<string name="p_qualityFeature">质量特征信息</string>
+	
+	<!-- 9/10/2015添加 -->
+	<string name="p_name_value">有失效率等级的片式固体电解质钽电容器</string>
+    <string name="p_type_value">CAK45A</string>
+    <string name="p_specDetial_value">CAK45A-B-10V-10μF-K</string>
+	<string name="p_company_value">中国振华(集团)新云电子元器件有限责任公司</string>
+    <string name="p_std_value">GJB2283-1995</string>
+    <string name="p_stdDetail_value">ZZR-Q/MM20226A-2010</string>
+    <string name="p_standard_value">--</string>
+    <string name="p_manufactureQg1_value">QPL:M</string>
+    <string name="p_reQg_value">A2</string>
+    <string name="p_failQg_value">M级</string>
+    <string name="p_encap_value">片式模压B壳</string>
+	<string name="p_prodLine_value">片式固体电解质钽电容器生产线片式固体电解质钽电容器生产线</string>
+	<string name="p_prodDate_value">2010-08-02</string>
+	<string name="p_batchNum_value">1202BB04331202</string>
+	<string name="p_params_value">工作温度范围：-55～125℃;额定电压＝10V;标称容量＝10μF;容量允许偏差：±10%;损耗角正切≤.06;漏电流≤1μA</string>	
+	<!--  -->
+	
+	<string name="p_firstFinalizing">首次设计定型</string>
+	<string name="p_finalizingDate">首次定型日期</string>
+	<string name="p_inspectionOrg">鉴定试验机构</string>
+	<string name="p_inspectionTime">鉴定时间</string>
+	<string name="p_inspectionId">鉴定检验证书号</string>
+	<string name="p_inspectionReport">鉴定检验报告</string>
+	<string name="p_techChange">技术状态更改</string>
+	<string name="p_techChangeTimes">首次定型后技术状态变更次数</string>
+	<string name="p_failureFrequency">故障模式及频数比</string>
+	<string name="p_qualityIssues">曾发生的质量问题</string>
+	<string name="p_qulityReport">质量分析报告</string>
+	<string name="p_issueRelevance">此批产品与曾发生问题产品的相关性</string>
+	<string name="p_caution">使用注意事项</string>
+	<string name="p_appGuide">应用指南</string>
+	<string name="p_totalOrder">产品总订货量</string>
+	<string name="p_supply3y">近三年的总供货量</string>
+	<string name="p_userNum">用户数</string>
+	<string name="p_appEnvironment">产品应用环境</string>
+	<string name="p_techPhone">技术支持电话</string>
+	<string name="p_buyPhone">订货联系电话</string>
+	<string name="p_companySite">生产商网站</string>
+	<string name="p_specialIndex">特殊应用环境适用性指标</string>
+	<string name="p_failureRate">失效率</string>
+	<string name="p_supply_f">产品首次定型后的总供货量</string>
+	<string name="p_supply_main">主要用户个数</string>
+	<string name="p_appField">产品已应用领域</string>
+	<string name="p_2filterPass">筛选合格率</string>
+	<string name="p_userFail">失效批次数</string>
+	<string name="p_failNum">失效数量</string>
+	<string name="p_failMode">主要失效模式</string>
+	<string name="p_failReport">失效案例和失效分析报告</string>
+	<string name="p_guanbiao">贯标覆盖情况</string>
+	<string name="p_supplyReport">供货筛选条件及筛选报告</string>
+	<string name="p_3temperture">产品关键参数三温曲线</string>
+	<string name="p_failRelevance">该批产品与曾失效产品的相关度</string>
+	<string name="p_appMode">产品典型应用模式推荐</string>
+	<string name="p_failure1">预期使用模式下的故障模式</string>
+	<string name="p_failure2">非预期使用模式下的故障模式</string>
+	
+	<!-- 9/10/2015添加 -->
+	<string name="p_finalizingDate_value">2010-5</string>
+	<string name="p_inspectionOrg_value">军用电子元器件定型委员会</string>
+	<string name="p_inspectionTime_value">2010年</string>
+	<string name="p_techChangeTimes_value">1</string>
+	<string name="p_supply3y_value">229355</string>
+	<string name="p_supply_f_value">522331</string>
+	<string name="p_supply_main_value">5</string>
+	<string name="p_appField_value">宇航、航天、航空、兵器、船舶</string>
+	<string name="p_userFail_value">--</string>
+	<string name="p_2filterPass_value">98.3%</string>
+	<string name="p_failNum_value">63</string>
+	<string name="p_failMode_value">短路、断路、接触不良</string>
+	<string name="p_failReport_value">--</string>
+	<string name="p_guanbiao_value">贯标线上生产的贯标产品</string>
+	<string name="p_specialIndex_value">详情咨询：王福建 010-52270516</string>
+	<string name="p_failRelevance_value">详情咨询：王福建 010-52270516</string>
+	<string name="p_appMode_value">详情咨询：王福建 010-52270516</string>
+	<string name="p_failure1_value">详情咨询：王福建 010-52270516</string>
+	<string name="p_failure2_value">详情咨询：王福建 010-52270516</string>
+	<!--  -->
+	
+	<string name="indexNum">序号</string>
+	<string name="checklook">点击查看</string>
+	
+	<!-- 8/28/2015后添加 -->
+	<string name="content_description"></string>
+	<string name="head_title">资讯</string>
+	<!-- 底部标签 -->
+    <string name="information">资讯</string>
+    <string name="collection">收藏</string>
+    <string name="personal_center">个人</string>
+    <!-- 菜单内容 -->
+    <string name="declare_company">声明企业</string>
+    <string name="green_printing">绿色印刷</string>
+    <string name="green_lighter">绿色照明</string>
+    <string name="building_material">建筑材料</string>
+    <string name="active_speaker">有源音箱</string>
+    <string name="scan_search">扫描查询</string>
+    <string name="search">查询</string>
+    <string name="report_complaints">举报投诉</string>
+    <string name="advice">意见建议</string>
+    <string name="menu">菜单</string>
+    
+    <string name="back">返回</string>
+    <string name="scan_history">扫描历史</string>
+    <string name="scan_qr">二维码扫描</string>
+    <string name="cancel">取消</string>
+    
+    <!-- 收藏内容 -->
+    <string name="my_name">asdasd</string>
+    <string name="upload_image">上传头像</string>
+    <string name="my_collection">我的收藏</string>
+    <string name="my_report">我的投诉</string>
+    <string name="my_advice">我的建议</string>
+    <string name="modify_password">修改密码</string>
+    <string name="logout">注销</string>
+    <!--  -->
+</resources>

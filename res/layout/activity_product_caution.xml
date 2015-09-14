@@ -1,0 +1,93 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp"
+    android:paddingBottom="30dp"
+    android:orientation="vertical" >
+    <TableLayout
+    android:id="@+id/process_tb"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:background="@color/tb_bg"
+    android:stretchColumns="1,2"
+    android:shrinkColumns="1,2">
+  <TableRow>
+        <TextView
+            style="@style/td1_1"
+            android:layout_marginTop="1dip"
+            android:layout_marginLeft="1dip"
+            android:layout_marginRight="1dip"
+            android:text="@string/indexNum" />
+        <TextView
+            style="@style/td1_1"
+            android:layout_marginTop="1dip"
+            android:layout_marginRight="1dip"
+            android:layout_width="80dp"
+            android:text="使用注意事项" />
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            style="@style/td2"
+            android:layout_marginLeft="1dip"
+            android:layout_marginTop="1dip"
+            android:layout_marginRight="1dip"
+            android:text="1" />
+        <TextView
+            style="@style/td2"
+            android:layout_marginTop="1dip"
+            android:layout_marginRight="1dip"
+            android:text="防止电容器受到机械应力和热冲击的损伤。" />
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            style="@style/td2"
+            android:layout_marginLeft="1dip"
+            android:layout_marginRight="1dip"
+            android:text="2" />
+        <TextView
+            style="@style/td2"
+            android:layout_marginRight="1dip"
+            android:text="焊接最好采用再流焊工艺。" />
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            style="@style/td2"
+            android:layout_marginLeft="1dip"
+            android:layout_marginRight="1dip"
+            android:text="3" />
+        <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical" >     
+		        <TextView
+		            style="@style/td2"
+		            android:layout_marginRight="1dip"
+		            android:text="采用烙铁焊接时：" />
+		        <TextView
+		            style="@style/td2"
+		            android:layout_marginRight="1dip"
+		            android:text="（1）避免烙铁头直接接触电容器本体；" />
+		        <TextView
+		            style="@style/td2"
+		            android:layout_marginRight="1dip"
+		            android:text="（2）烙铁功率不大于20W，烙铁头尖端直径不超过3mm，温度不高于280℃，焊接时间不吵过5秒；" />
+		        <TextView
+		            style="@style/td2"
+		            android:layout_marginRight="1dip"
+		            android:text="（3）产品焊接前要进行预热，预热温度由60℃逐渐升到150℃。" />
+		</LinearLayout>
+    </TableRow>
+    
+</TableLayout>
+
+</LinearLayout>
+</ScrollView>

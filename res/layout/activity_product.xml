@@ -1,0 +1,342 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="40dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:background="@color/tb_bg"
+    android:stretchColumns="1"
+    android:shrinkColumns="1">
+    <TableRow>
+        <TextView
+            style="@style/td1"
+            android:layout_marginTop="1dip"
+            android:text="@string/p_name" />
+        <TextView
+            android:id="@+id/p_name"
+            android:layout_marginTop="1dip"
+            style="@style/td2"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_type" />
+        <TextView
+            android:id="@+id/p_type"
+            style="@style/td2"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_specDetial" />
+        <TextView
+            android:id="@+id/p_specDetial"
+            style="@style/td2"/>
+    </TableRow>
+    <TableRow>  
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_company" />
+        <TextView
+            android:id="@+id/p_company"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_standard" />
+        <TextView
+            android:id="@+id/p_standard"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+           style="@style/td1"
+           android:text="@string/p_manufactureQg" />
+        <TextView
+            android:id="@+id/p_manufactureQg"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_prodLine" />
+        <TextView
+            android:id="@+id/p_prodLine"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_prodDate" />
+        <TextView
+            android:id="@+id/p_prodDate"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_batchNum" />
+        <TextView
+            android:id="@+id/p_batchNum"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_params" />
+        <TextView
+            android:id="@+id/p_params"
+            style="@style/td2"/>
+	</TableRow>
+   <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_photo" />
+        <ImageView
+            android:id="@+id/p_photo"
+            style="@style/td2"/>
+
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_shapeChart" />
+        <ImageView
+            android:id="@+id/p_shapeChart"
+            style="@style/td2"/>
+    </TableRow>
+    <!--  
+    <TableRow>      
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_materialPis" />
+        <TextView
+            android:id="@+id/p_materialPis"
+            style="@style/td2"
+            android:text="@string/checklook"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_materialReport" />
+        <ImageView
+            android:id="@+id/p_materialReport"
+            style="@style/td2"/>
+	</TableRow>
+	-->
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_prodData" />
+        <TableLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:stretchColumns="1"
+		    android:shrinkColumns="1">
+		    <TableRow>
+		        <TextView
+		            style="@style/td2"
+		            android:text="@string/p_prodProcessYield" />
+		        <TextView
+		            android:id="@+id/p_prodProcessYield"
+		            android:text="@string/checklook"
+		            style="@style/td2"/>
+		    </TableRow>
+		    <TableRow>
+		        <TextView
+		            style="@style/td2"
+		            android:text="@string/p_prodParams" />
+		        <TextView
+		            android:id="@+id/p_prodParams"
+		            android:text="@string/checklook"
+		            style="@style/td2"/>
+		    </TableRow>
+		</TableLayout>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_filterCondition" />
+        <TextView
+            android:id="@+id/p_filterCondition"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_filterReport" />
+        <ImageView
+            android:id="@+id/p_filterReport"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_qualityFeature" />
+        <TextView
+            android:id="@+id/p_qualityFeature"
+            style="@style/td2"/>
+ 	</TableRow>
+    <TableRow>       
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_firstFinalizing" />
+        <TableLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:stretchColumns="1"
+		    android:shrinkColumns="1">
+		    <TableRow>
+		        <TextView
+		            style="@style/td2"
+		            android:text="@string/p_finalizingDate" />
+		        <TextView
+		            android:id="@+id/p_finalizingDate"
+		            style="@style/td2"/>
+		    </TableRow>
+		    <TableRow>
+		        <TextView
+		            style="@style/td2"
+		            android:text="@string/p_inspectionOrg" />
+		        <TextView
+		            android:id="@+id/p_inspectionOrg"
+		            style="@style/td2"/>
+		    </TableRow>
+		    <TableRow>
+		        <TextView
+		            style="@style/td2"
+		            android:text="@string/p_inspectionId" />
+		        <TextView
+		            android:id="@+id/p_inspectionId"
+		            style="@style/td2"/>
+		    </TableRow>
+		    <TableRow>
+		        <TextView
+		            style="@style/td2"
+		            android:text="@string/p_inspectionReport" />
+		        <ImageView
+		            android:id="@+id/p_inspectReport"
+		            style="@style/td2"/>
+		    </TableRow>
+		</TableLayout>
+ 	</TableRow>
+    <TableRow>       
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_techChange" />
+        <TextView
+            android:id="@+id/p_techChange"
+            style="@style/td2"/>
+ 	</TableRow>
+    <TableRow>       
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_failureFrequency" />
+        <TextView
+            android:id="@+id/p_failureFrequency"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_qualityIssues" />
+        <TextView
+            android:id="@+id/p_qualityIssues"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_qulityReport" />
+        <TextView
+            android:id="@+id/p_qulityReport"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_issueRelevance" />
+        <TextView
+            android:id="@+id/p_issueRelevance"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_caution" />
+        <TextView
+            android:id="@+id/p_caution"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_appGuide" />
+        <TextView
+            android:id="@+id/p_appGuide"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>       
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_totalOrder" />
+        <TextView
+            android:id="@+id/p_totalOrder"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_supply3y" />
+        <TextView
+            android:id="@+id/p_supply3y"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_userNum" />
+        <TextView
+            android:id="@+id/p_userNum"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_appEnvironment" />
+        <TextView
+            android:id="@+id/p_appEnvironment"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_techPhone" />
+        <TextView
+            android:id="@+id/p_techPhone"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_buyPhone" />
+        <TextView
+            android:id="@+id/p_buyPhone"
+            style="@style/td2"/>
+	</TableRow>
+    <TableRow>        
+        <TextView
+            style="@style/td1"
+            android:text="@string/p_companySite" />
+        <TextView
+            android:id="@+id/p_companySite"
+            style="@style/td2"/>  
+    </TableRow>
+</TableLayout>
+</ScrollView>
