@@ -38,15 +38,10 @@ public class MainActivity extends SlidingFragmentActivity implements OnClickList
 
 	private void initFragment() {
 		fragments[0] = new InformationFragment();
-		fragments[1] = new CollectionFragment();
-		fragments[2] = new PersonalCenterFragment();
 		fm = getSupportFragmentManager();
 		fm.beginTransaction()
 		.add(R.id.framelayout_main, fragments[0])
-		.add(R.id.framelayout_main, fragments[1])
-		.add(R.id.framelayout_main, fragments[2])
 		.commit();
-		fm.beginTransaction().hide(fragments[1]).hide(fragments[2]).commit();
 	}
 
 	private void initMenu()
@@ -93,20 +88,29 @@ public class MainActivity extends SlidingFragmentActivity implements OnClickList
 
 	@Override
 	public void onClick(View v) {
-		ft = fm.beginTransaction().hide(fragments[0]).hide(fragments[1]).hide(fragments[2]);
+		ft = fm.beginTransaction().hide(fragments[0]);
+		if(fragments[1]!=null )
+			ft.hide(fragments[1]);
+		if(fragments[2]!=null)
+			ft.hide(fragments[2]);
 		switch(v.getId()){
 		case R.id.btnInformation:
-			v.setBackgroundResource(R.color.bisque);
 			title.setText(R.string.information);
 			ft.show(fragments[0]).commit();
 			break;
 		case R.id.btnCollection:
-			v.setBackgroundResource(R.color.bisque);
+			if(fragments[1] == null){
+				fragments[1]= new CollectionFragment();
+				ft.add(R.id.framelayout_main, fragments[1]);
+			}
 			title.setText(R.string.collection);
 			ft.show(fragments[1]).commit();
 			break;
 		case R.id.btnPersonalCenter:
-			v.setBackgroundResource(R.color.bisque);
+			if(fragments[2] == null){
+				fragments[2]= new PersonalCenterFragment();
+				ft.add(R.id.framelayout_main, fragments[2]);
+			}
 			title.setText(R.string.personal_center);
 			ft.show(fragments[2]).commit();
 			break;

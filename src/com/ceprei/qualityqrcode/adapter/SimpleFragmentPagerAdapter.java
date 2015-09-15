@@ -10,14 +10,16 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
 	private List<Fragment> list = new ArrayList<Fragment>();
+	private List<String> titles = new ArrayList<String>();
 	
 	public SimpleFragmentPagerAdapter(FragmentManager fm) {
 		super(fm);
 	}
 	
-	public SimpleFragmentPagerAdapter(FragmentManager fm,List<Fragment> list){
+	public SimpleFragmentPagerAdapter(FragmentManager fm,List<Fragment> list,List<String> titles){
 		super(fm);
 		this.list = list;
+		this.titles = titles;
 	}
 
 	@Override
@@ -28,5 +30,10 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 	@Override
 	public int getCount() {
 		return list.size();
+	}
+	
+	@Override
+	public CharSequence getPageTitle(int position) {
+		return titles.get(position);
 	}
 }
