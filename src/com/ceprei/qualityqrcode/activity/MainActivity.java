@@ -62,11 +62,11 @@ public class MainActivity extends SlidingFragmentActivity implements OnClickList
 		
 		menu.addIgnoredView(findViewById(R.id.framelayout_main).getRootView());
 
-		menu.setSecondaryShadowDrawable(R.drawable.shadow);
-		menu.setSecondaryMenu(R.layout.right_menu_frame);
-		Fragment rightMenuFragment = new RightMenuFragment();
-		getSupportFragmentManager().beginTransaction()
-				.replace(R.id.id_right_menu_frame, rightMenuFragment).commit();
+		//menu.setSecondaryShadowDrawable(R.drawable.shadow);
+		//menu.setSecondaryMenu(R.layout.right_menu_frame);
+		//Fragment rightMenuFragment = new RightMenuFragment();
+		//getSupportFragmentManager().beginTransaction()
+				//.replace(R.id.id_right_menu_frame, rightMenuFragment).commit();
 	}
 
 	public void showLeftMenu(View view)
