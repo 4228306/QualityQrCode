@@ -48,7 +48,7 @@ public class CaptureActivity extends Activity implements Callback {
 	private RelativeLayout mContainer = null;
 	private RelativeLayout mCropLayout = null;
 	private boolean isNeedCapture = false;
-	private Button listBtn;
+	private Button listBtn,backBtn;
 	
 	public boolean isNeedCapture() {
 		return isNeedCapture;
@@ -118,6 +118,16 @@ public class CaptureActivity extends Activity implements Callback {
 				Intent intent=new Intent(CaptureActivity.this,ProductListActivity.class);
 				startActivity(intent);
 			}
+		});
+		backBtn = (Button) findViewById(R.id.btnBack);
+		backBtn.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+			
 		});
 	}
 

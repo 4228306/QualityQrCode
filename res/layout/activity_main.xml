@@ -18,9 +18,9 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="3dp"
+            android:background="@drawable/showleft_selector"
             android:contentDescription="@string/content_description"
-            android:onClick="showLeftMenu"
-            android:background="@drawable/showright_selector" />
+            android:onClick="showLeftMenu" />
 
         <TextView
             android:id="@+id/head_title"
@@ -33,17 +33,27 @@
             android:textStyle="bold" />
 
         <ImageButton
-            android:id="@+id/id_iv_right"
+            android:id="@+id/hand_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="3dp"
-            android:onClick="showRightMenu"
-            android:contentDescription="@string/content_description"
-            android:background="@drawable/showleft_selector" />
+            android:layout_marginRight="13dp"
+            android:layout_toLeftOf="@+id/scan_search"
+            android:background="@drawable/hand_search_selector"
+            android:contentDescription="@string/content_description"/>
+
+        <ImageButton
+            android:id="@+id/scan_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/hand_search"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/scan_search_selector"
+            android:contentDescription="@string/content_description"/>
+
     </RelativeLayout>
-    
+
     <FrameLayout
         android:id="@+id/framelayout_main"
         android:layout_width="fill_parent"
@@ -66,6 +76,7 @@
             android:text="@string/information"
             android:textColor="#000"
             android:textSize="20sp" />
+
         <Button
             android:id="@+id/btnCollection"
             style="?android:attr/buttonBarButtonStyle"
@@ -77,7 +88,7 @@
             android:text="@string/collection"
             android:textColor="#000"
             android:textSize="20sp" />
-        
+
         <Button
             android:id="@+id/btnPersonalCenter"
             style="?android:attr/buttonBarButtonStyle"
@@ -89,7 +100,6 @@
             android:text="@string/personal_center"
             android:textColor="#000"
             android:textSize="20sp" />
-
     </LinearLayout>
 
 </LinearLayout>
