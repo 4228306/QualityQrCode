@@ -58,6 +58,7 @@ public class MenuAdapter extends BaseAdapter {
 			zujian =(Zujian) arg1.getTag();
 		}
 		zujian.imageView.setBackgroundResource((Integer)data.get(arg0).get("image"));
+		zujian.textView.setTextSize(16);
 		zujian.textView.setText((String)data.get(arg0).get("title"));
 		
 		return arg1;

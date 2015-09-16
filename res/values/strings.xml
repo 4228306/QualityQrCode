@@ -24,7 +24,8 @@
     <string name="phone">电&#160;&#160;&#160;&#160;话:</string>
     <string name="scan_tips">将二维码图片对准扫描框即可自动扫描</string>
     <string name="home_page">(进入首页)</string>
-    
+    <string name="login_regist">登陆/注册</string>
+    <string name="exit">退出</string>
     
     <string name="expand">&lt;&lt;展开</string>
     <string name="shrink">&lt;&lt;收起</string>

@@ -20,17 +20,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends SlidingFragmentActivity implements OnClickListener{
-	
+
 	private Fragment[] fragments = new Fragment[3];
 	private TextView title;
 	private FragmentManager fm;
-	private FragmentTransaction ft; 
-    
+	private FragmentTransaction ft;
+	private long exitTime = 0;
+
 	public void onCreate(Bundle savedInstanceState) {
-		requestWindowFeature(Window.FEATURE_NO_TITLE);   
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		title = (TextView)findViewById(R.id.head_title);
+		ActivityCollector.addActivity(this);
 		initFragment();
 		initMenu();
 		initOnClickListener();
@@ -49,7 +51,7 @@ public class MainActivity extends SlidingFragmentActivity implements OnClickList
 		Fragment leftMenuFragment = new LeftMenuFragment();
 		setBehindContentView(R.layout.left_menu_frame);
 		getSupportFragmentManager().beginTransaction()
-				.replace(R.id.id_left_menu_frame, leftMenuFragment).commit();
+		.replace(R.id.id_left_menu_frame, leftMenuFragment).commit();
 		SlidingMenu menu = getSlidingMenu();
 		menu.setMode(SlidingMenu.LEFT);
 
@@ -59,14 +61,14 @@ public class MainActivity extends SlidingFragmentActivity implements OnClickList
 
 		menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
 		menu.setFadeDegree(0.35f);
-		
+
 		menu.addIgnoredView(findViewById(R.id.framelayout_main).getRootView());
 
 		//menu.setSecondaryShadowDrawable(R.drawable.shadow);
 		//menu.setSecondaryMenu(R.layout.right_menu_frame);
 		//Fragment rightMenuFragment = new RightMenuFragment();
 		//getSupportFragmentManager().beginTransaction()
-				//.replace(R.id.id_right_menu_frame, rightMenuFragment).commit();
+		//.replace(R.id.id_right_menu_frame, rightMenuFragment).commit();
 	}
 
 	public void showLeftMenu(View view)
@@ -74,7 +76,7 @@ public class MainActivity extends SlidingFragmentActivity implements OnClickList
 		getSlidingMenu().showMenu();
 		Toast.makeText(MainActivity.this, "左侧按钮", Toast.LENGTH_SHORT).show();
 	}
-	
+
 	private void initOnClickListener() {
 		findViewById(R.id.btnInformation).setOnClickListener(this);
 		findViewById(R.id.btnCollection).setOnClickListener(this);
@@ -118,7 +120,11 @@ public class MainActivity extends SlidingFragmentActivity implements OnClickList
 			title.setText(R.string.personal_center);
 			ft.show(fragments[2]).commit();
 			break;
-		case R.id.hand_search:Toast.makeText(this, "手动搜索", Toast.LENGTH_SHORT).show();break;
+		case R.id.hand_search:
+			Toast.makeText(this, "手动搜索", Toast.LENGTH_SHORT).show();
+			intent = new Intent(MainActivity.this,SearchActivity.class);
+			startActivity(intent);
+			break;
 		case R.id.scan_search:
 			Toast.makeText(this, "扫描查询", Toast.LENGTH_SHORT).show();
 			intent = new Intent(MainActivity.this,CaptureActivity.class);
@@ -126,4 +132,23 @@ public class MainActivity extends SlidingFragmentActivity implements OnClickList
 			break;
 		}
 	}
+
+	@Override  
+	public void onBackPressed() {
+		if ((System.currentTimeMillis() - exitTime) > 2000) {
+			// ToastUtil.makeToastInBottom("再按一次退出应用", MainMyselfActivity);
+			Toast.makeText(MainActivity.this, "再按一次退出应用", Toast.LENGTH_SHORT).show();
+			exitTime = System.currentTimeMillis();
+			return;
+		}
+		ActivityCollector.finishAll();
+	}
+	
+
+	@Override
+	protected void onDestroy(){
+		super.onDestroy();
+		ActivityCollector.removeActivity(this);
+	}
+	
 }

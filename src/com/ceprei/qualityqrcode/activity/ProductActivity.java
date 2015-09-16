@@ -7,7 +7,6 @@ import com.ceprei.qualityqrcode.entity.MainInfo;
 import com.ceprei.qualityqrcode.intent.IntentUtil;
 import com.ceprei.qualityqrcode.service.MainInfoService;
 import com.ceprei.qualityqrcode.util.FileUtils;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -19,7 +18,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
 
-public class ProductActivity extends Activity {
+public class ProductActivity extends BaseActivity {
 	private final static String BASEPATH = android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "ceprei";
 	private final static String RES_RAW = "/res/raw/";
 	private MainInfo data;

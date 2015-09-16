@@ -2,13 +2,12 @@ package com.ceprei.qualityqrcode.activity;
 
 
 import com.ceprei.qualityqrcode.R;
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 
 
 
-public class ProductCautionActivity extends Activity{
+public class ProductCautionActivity extends BaseActivity{
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -9,7 +9,6 @@ import com.ceprei.qualityqrcode.intent.IntentUtil;
 import com.ceprei.qualityqrcode.service.MainInfoService;
 import com.ceprei.qualityqrcode.util.FileUtils;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -28,7 +27,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 
-public class Product2Activity extends Activity {
+public class Product2Activity extends BaseActivity {
 	private final static String BASEPATH = android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "ceprei";
 	private final static String RES_RAW = "/res/raw/";
 	private final static int MENU_BG_ON = Color.rgb(250,231,153);

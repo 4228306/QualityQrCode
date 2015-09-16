@@ -3,7 +3,6 @@ package com.ceprei.qualityqrcode.activity;
 import com.ceprei.qualityqrcode.R;
 import com.ceprei.qualityqrcode.entity.User;
 import com.ceprei.qualityqrcode.service.UserService;
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,7 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
-public class RegisterActivity extends Activity {
+public class RegisterActivity extends BaseActivity {
 	private EditText userName;
 	private EditText password;
 	private EditText passwordRe;

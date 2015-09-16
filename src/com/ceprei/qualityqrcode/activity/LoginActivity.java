@@ -5,7 +5,6 @@ import com.ceprei.qualityqrcode.activity.RegisterActivity;
 import com.ceprei.qualityqrcode.service.UserService;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,7 +21,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends BaseActivity {
 	private static final String FILE_NAME="userInfo";
 	private String user,pass;
 	private boolean isAutoLogin = false;

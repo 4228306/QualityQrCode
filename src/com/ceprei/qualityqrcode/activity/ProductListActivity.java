@@ -6,7 +6,6 @@ import java.util.List;
 import com.ceprei.qualityqrcode.R;
 import com.ceprei.qualityqrcode.entity.ScanHistory;
 import com.ceprei.qualityqrcode.service.ScanHistoryService;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -20,7 +19,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-public class ProductListActivity extends Activity{
+public class ProductListActivity extends BaseActivity{
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

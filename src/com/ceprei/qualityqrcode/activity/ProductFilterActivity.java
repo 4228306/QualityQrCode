@@ -8,7 +8,6 @@ import com.ceprei.qualityqrcode.R;
 import com.ceprei.qualityqrcode.intent.IntentUtil;
 import com.ceprei.qualityqrcode.util.FileUtils;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +16,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 
-public class ProductFilterActivity extends Activity{
+public class ProductFilterActivity extends BaseActivity{
 	private final static String RES_RAW = "/res/raw/";
 	private final static String BASEPATH = android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "ceprei";
 	@Override

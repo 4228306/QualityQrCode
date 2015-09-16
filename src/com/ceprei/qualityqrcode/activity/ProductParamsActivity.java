@@ -4,7 +4,6 @@ package com.ceprei.qualityqrcode.activity;
 import com.ceprei.qualityqrcode.R;
 import com.ceprei.qualityqrcode.entity.MainInfo;
 import com.ceprei.qualityqrcode.entity.ProdParams;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,7 +12,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class ProductParamsActivity extends Activity{
+public class ProductParamsActivity extends BaseActivity{
 	
 	private TableLayout tbLayout;
 	@Override

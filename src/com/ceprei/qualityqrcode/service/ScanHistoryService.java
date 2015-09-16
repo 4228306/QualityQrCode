@@ -31,7 +31,6 @@ public class ScanHistoryService {
 				data.setType(cursor.getString(3));
 				data.setPhoto(cursor.getString(4));
 				list.add(data);
- 
 	        }  
 		}catch(Exception e){e.printStackTrace();}
 		return list;

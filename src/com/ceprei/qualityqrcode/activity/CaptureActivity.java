@@ -7,7 +7,6 @@ import com.ceprei.qualityqrcode.decode.CaptureActivityHandler;
 import com.ceprei.qualityqrcode.decode.InactivityTimer;
 import com.ceprei.qualityqrcode.entity.ScanHistory;
 import com.ceprei.qualityqrcode.service.ScanHistoryService;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Point;
@@ -32,7 +31,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 
-public class CaptureActivity extends Activity implements Callback {
+public class CaptureActivity extends BaseActivity implements Callback {
 
 	private CaptureActivityHandler handler;
 	private boolean hasSurface;

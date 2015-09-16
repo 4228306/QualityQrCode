@@ -2,11 +2,10 @@ package com.ceprei.qualityqrcode.activity;
 
 import com.ceprei.qualityqrcode.R;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 
-public class BulletinActivity extends Activity {
+public class BulletinActivity extends BaseActivity {
 	
 	//private TextView about_us;
 

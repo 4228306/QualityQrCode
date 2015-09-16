@@ -1,11 +1,10 @@
 package com.ceprei.qualityqrcode.activity;
 
 import com.ceprei.qualityqrcode.R;
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 
-public class AboutusActivity extends Activity {
+public class AboutusActivity extends BaseActivity {
 
 	protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);   
