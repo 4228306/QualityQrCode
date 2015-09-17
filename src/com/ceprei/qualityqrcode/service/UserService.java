@@ -66,4 +66,8 @@ public class UserService {
 		}catch(Exception e){}
 		return false;
 	}
+	
+	public User getUserById(String id){
+		return new User();
+	}
 }

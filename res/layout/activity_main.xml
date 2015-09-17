@@ -25,6 +25,7 @@
 
         <Button
             android:id="@+id/btnInformation"
+            android:focusable="true" 
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
@@ -37,6 +38,7 @@
 
         <Button
             android:id="@+id/btnCollection"
+            android:focusable="true"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
@@ -49,6 +51,7 @@
 
         <Button
             android:id="@+id/btnPersonalCenter"
+            android:focusable="true"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
             android:layout_height="fill_parent"

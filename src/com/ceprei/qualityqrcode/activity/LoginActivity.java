@@ -22,7 +22,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends BaseActivity {
-	private static final String FILE_NAME="userInfo";
+	public static final String FILE_NAME="userInfo";
 	private String user,pass;
 	private boolean isAutoLogin = false;
 	private EditText userName,password;
@@ -34,15 +34,20 @@ public class LoginActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
-		
+		getSharedPreferences();
+		setContentView(R.layout.activity_login);
+		initViews();
+	}
+	
+	private boolean getSharedPreferences(){
 		sharedPreferences = this.getSharedPreferences(FILE_NAME,Context.MODE_PRIVATE);
 		if(sharedPreferences.contains("userName")){
 			user = sharedPreferences.getString("userName", "");
 			pass = sharedPreferences.getString("password", "");
 			isAutoLogin = sharedPreferences.getBoolean("isAutoLogin", true);
+			return isAutoLogin;
 		}
-		setContentView(R.layout.activity_login);
-		initViews();
+		return false;
 	}
 
 	@Override
@@ -106,11 +111,11 @@ public class LoginActivity extends BaseActivity {
 	private void login(){
 		String name=userName.getText().toString();
 		String pass=password.getText().toString();
-		if(name.equals("")){
+		if(name.trim().equals("")){
 			Toast.makeText(LoginActivity.this, "请输入用户名", Toast.LENGTH_LONG).show();
 			return;
 		}
-		if(password.equals("")){
+		if(pass.trim().equals("")){
 			Toast.makeText(LoginActivity.this, "请输入密码", Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -119,12 +124,13 @@ public class LoginActivity extends BaseActivity {
 		boolean flag = uService.login(name, pass);
 		if(flag){
 			Log.i("TAG","登陆成功");
-			Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_LONG).show();
+			Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
 			Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+			
 			startActivity(intent);
 			LoginActivity.this.finish();
 		}else{
-			Log.i("TAG","��¼ʧ��");
+			Log.i("TAG","用户名或密码错误");
 			Toast.makeText(LoginActivity.this, "用户名或密码错误", Toast.LENGTH_LONG).show();
 		}
 	}
