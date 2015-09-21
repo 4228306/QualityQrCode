@@ -1,6 +1,7 @@
 package com.ceprei.qualityqrcode.activity;
 
 import com.ceprei.qualityqrcode.R;
+import com.ceprei.qualityqrcode.entity.User;
 import com.ceprei.qualityqrcode.fragment.CollectionFragment;
 import com.ceprei.qualityqrcode.fragment.InformationFragment;
 import com.ceprei.qualityqrcode.fragment.LeftMenuFragment;
@@ -38,6 +39,7 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 	private long exitTime = 0;
 	private int position=0;
 	private boolean isLogin = false;
+	private User user;
 
 	public void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -53,15 +55,25 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 	}
 
 	private void initUser() {
+		Intent intent = getIntent();
+		user = new User();
+		if(intent.hasExtra("isLogin")){
+			isLogin = intent.getBooleanExtra("isLogin", false);
+			user.setName(intent.getStringExtra("username"));
+			Log.i("Login","isLogin："+String.valueOf(isLogin));
+			return;
+		}
 		SharedPreferences sharedPreferences = getSharedPreferences(LoginActivity.FILE_NAME,Context.MODE_PRIVATE);
-		if(sharedPreferences.contains("userName")){
-			String user = sharedPreferences.getString("userName", "");
+		if(sharedPreferences.contains("username")){
+			String username = sharedPreferences.getString("username", "");
 			String pass = sharedPreferences.getString("password", "");
+			user.setName(username);
+			user.setPassword(pass);
 			boolean isAutoLogin = sharedPreferences.getBoolean("isAutoLogin", true);
 			Log.i("Login","isAutoLogin:"+String.valueOf(isLogin));
 			if(isAutoLogin){
 				UserService uService=new UserService(MainActivity.this);
-				isLogin = uService.login(user, pass);
+				isLogin = uService.login(username, pass);
 				Log.i("Login","isLogin："+String.valueOf(isLogin));
 			}
 		}
@@ -69,7 +81,6 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 
 	private void initFragment() {
 		fragments[0] = new InformationFragment();
-		fragments[0].setArguments(new Bundle());
 		fm = getSupportFragmentManager();
 		fm.beginTransaction().add(R.id.framelayout_main, fragments[0]).commit();
 	}
@@ -84,6 +95,10 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 	private void initMenu()
 	{
 		Fragment leftMenuFragment = new LeftMenuFragment();
+		Bundle bundle =new Bundle();
+		bundle.putString("username", user.getName());
+		bundle.putBoolean("isLogin", isLogin);
+		leftMenuFragment.setArguments(bundle);
 		setBehindContentView(R.layout.left_menu_frame);
 		fm.beginTransaction().replace(R.id.id_left_menu_frame, leftMenuFragment).commit();
 		SlidingMenu menu = getSlidingMenu();
@@ -191,6 +206,7 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 			exitTime = System.currentTimeMillis();
 			return;
 		}
+		Log.v("Exit", "退出应用");
 		ActivityCollector.finishAll();
 	}
 

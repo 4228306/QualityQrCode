@@ -11,7 +11,6 @@ public class UserService {
 	public UserService(Context context){
 		dbHelper=new DataBaseHelper(context);
 	}
-	
 
 	public boolean login(String username,String password){
 		try{
@@ -19,7 +18,7 @@ public class UserService {
 			SQLiteDatabase sdb=dbHelper.getReadableDatabase();
 			String sql="select * from User where UserName=? and Password=?";
 			Cursor cursor=sdb.rawQuery(sql, new String[]{username,password});		
-			if(cursor.moveToFirst()==true){
+			if(cursor.moveToFirst()){
 				cursor.close();
 				return true;
 			}
@@ -67,7 +66,9 @@ public class UserService {
 		return false;
 	}
 	
-	public User getUserById(String id){
-		return new User();
+	public User getUserByName(String id){
+		User user = new User();
+		user.setName("123");
+		return user;
 	}
 }

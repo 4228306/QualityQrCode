@@ -7,11 +7,11 @@ import com.ceprei.qualityqrcode.R;
 import com.ceprei.qualityqrcode.activity.ActivityCollector;
 import com.ceprei.qualityqrcode.activity.LoginActivity;
 import com.ceprei.qualityqrcode.entity.User;
-import com.ceprei.qualityqrcode.service.UserService;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,7 +30,6 @@ public class LeftMenuFragment extends Fragment implements OnClickListener{
 	private Button loginRegist,exit;
 	private ImageView loginImage,exitImage;
 	private boolean isLogin = false;
-	private String userId;
 	private User user;
 
 	@Override  
@@ -44,17 +43,13 @@ public class LeftMenuFragment extends Fragment implements OnClickListener{
 	}  
 
 	private void initUser() {
-		Intent intent = getActivity().getIntent();
-		Bundle bundle = intent.getExtras();
-		if(bundle == null || !bundle.containsKey("userId"))
-			return;
-		userId = bundle.getString("userId");
-		isLogin = bundle.getBoolean("isLogin");
-		if(isLogin){
-			UserService userService = new UserService(getActivity());
-			user = userService.getUserById(userId);
+		user = new User();
+		Bundle bundle = getArguments();
+		if(bundle.containsKey("username") && bundle.containsKey("isLogin")){
+			user.setName(bundle.getString("username"));
+			isLogin = bundle.getBoolean("isLogin");
+			Log.v("initUser","username"+user.getName());
 		}
-		user.setName("123");
 	}
 
 	private void initView(LayoutInflater inflater, ViewGroup container)  
@@ -66,7 +61,8 @@ public class LeftMenuFragment extends Fragment implements OnClickListener{
 		exitImage = (ImageView)mView.findViewById(R.id.exit_image);
 		if(isLogin){
 			loginRegist.setText(user.getName());
-			loginRegist.setClickable(false);
+			Log.v("Login","loginRegist");
+			loginRegist.setEnabled(false);
 		}
 
 		mCategories = (ListView) mView.findViewById(R.id.id_listview_categories);

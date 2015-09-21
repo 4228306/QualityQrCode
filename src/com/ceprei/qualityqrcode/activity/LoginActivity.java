@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
@@ -25,7 +24,7 @@ public class LoginActivity extends BaseActivity {
 	public static final String FILE_NAME="userInfo";
 	private String user,pass;
 	private boolean isAutoLogin = false;
-	private EditText userName,password;
+	private EditText username,password;
 	private Button login,register;
 	private CheckBox remember,autoLogin;
 	private SharedPreferences sharedPreferences;
@@ -39,25 +38,20 @@ public class LoginActivity extends BaseActivity {
 		initViews();
 	}
 	
-	private boolean getSharedPreferences(){
+	private void getSharedPreferences(){
 		sharedPreferences = this.getSharedPreferences(FILE_NAME,Context.MODE_PRIVATE);
-		if(sharedPreferences.contains("userName")){
-			user = sharedPreferences.getString("userName", "");
+		if(sharedPreferences.contains("username")){
+			user = sharedPreferences.getString("username", "");
 			pass = sharedPreferences.getString("password", "");
 			isAutoLogin = sharedPreferences.getBoolean("isAutoLogin", true);
-			return isAutoLogin;
+			if(isAutoLogin){
+				login();
+			}
 		}
-		return false;
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		//getMenuInflater().inflate(R.menu.login, menu);
-		return false;
 	}
 	
 	private void initViews() {
-		userName=(EditText) findViewById(R.id.userName);
+		username=(EditText) findViewById(R.id.userName);
 		password=(EditText) findViewById(R.id.password);
 		login=(Button) findViewById(R.id.login_btn);
 		register=(Button) findViewById(R.id.register_btn);
@@ -65,7 +59,7 @@ public class LoginActivity extends BaseActivity {
 		autoLogin=(CheckBox) findViewById(R.id.cb_auto);
 		
 		if(user != null && !user.equals("")){
-			userName.setText(user);
+			username.setText(user);
 			password.setText(pass);
 			remember.setChecked(true);
 		}
@@ -109,14 +103,14 @@ public class LoginActivity extends BaseActivity {
 	}
 
 	private void login(){
-		String name=userName.getText().toString();
+		String name=username.getText().toString();
 		String pass=password.getText().toString();
 		if(name.trim().equals("")){
-			Toast.makeText(LoginActivity.this, "请输入用户名", Toast.LENGTH_LONG).show();
+			Toast.makeText(LoginActivity.this, "请输入用户名", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		if(pass.trim().equals("")){
-			Toast.makeText(LoginActivity.this, "请输入密码", Toast.LENGTH_LONG).show();
+			Toast.makeText(LoginActivity.this, "请输入密码", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		Log.i("TAG",name+"_"+pass);
@@ -126,18 +120,19 @@ public class LoginActivity extends BaseActivity {
 			Log.i("TAG","登陆成功");
 			Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
 			Intent intent=new Intent(LoginActivity.this,MainActivity.class);
-			
+			intent.putExtra("isLogin", true);
+			intent.putExtra("username", name);
 			startActivity(intent);
 			LoginActivity.this.finish();
 		}else{
 			Log.i("TAG","用户名或密码错误");
-			Toast.makeText(LoginActivity.this, "用户名或密码错误", Toast.LENGTH_LONG).show();
+			Toast.makeText(LoginActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
 		}
 	}
 	
 	private void saveUserInfo(){
 		Editor editor=sharedPreferences.edit();
-		editor.putString("userName", userName.getText().toString());
+		editor.putString("username", username.getText().toString());
 		editor.putString("password", password.getText().toString());
 		if(autoLogin.isChecked())
 			editor.putBoolean("isAutoLogin", true);
@@ -148,7 +143,7 @@ public class LoginActivity extends BaseActivity {
 	
 	private void removeUserInfo(){
 		Editor editor=sharedPreferences.edit();
-		editor.putString("userName", userName.getText().toString());
+		editor.putString("username", username.getText().toString());
 		editor.putString("password", password.getText().toString());
 		editor.putBoolean("isAutoLogin", false);
 		editor.commit();
