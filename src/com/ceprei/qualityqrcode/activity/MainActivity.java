@@ -69,6 +69,7 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 
 	private void initFragment() {
 		fragments[0] = new InformationFragment();
+		fragments[0].setArguments(new Bundle());
 		fm = getSupportFragmentManager();
 		fm.beginTransaction().add(R.id.framelayout_main, fragments[0]).commit();
 	}
@@ -127,7 +128,7 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 	public boolean onTouch(View v,MotionEvent event) {
 		Intent intent = null;
 		AlphaAnimation a = new AlphaAnimation(0.1f,1.0f);
-		a.setDuration(500);
+		a.setDuration(600);
 		if(event.getAction() == MotionEvent.ACTION_DOWN)
 			v.startAnimation(a);
 		ft = fm.beginTransaction();
