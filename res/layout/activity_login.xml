@@ -63,7 +63,8 @@
                 android:inputType="text"
                 android:maxLength="20" >
 
-                <requestFocus />
+                <requestFocus android:layout_width="match_parent" />
+
             </EditText>
         </LinearLayout>
 
@@ -125,25 +126,30 @@
         android:textColor="@color/black"
         android:textSize="17sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:padding="6dp"
-        android:text="@string/register_tips" />
+        android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/register_btn"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:background="@drawable/btn_login_selector"
-        android:text="@string/register"
-        android:textSize="17sp" />
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="@string/register_tips"
+            android:textSize="16sp" />
+	
+	    <Button
+	        android:id="@+id/register_btn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="30dp"
+	        android:layout_marginTop="10dp"
+	        android:padding="10dp"
+	        android:background="@drawable/btn_login_selector"
+	        android:text="@string/register"
+	        android:textSize="17sp" />
+	</LinearLayout>
 </LinearLayout>

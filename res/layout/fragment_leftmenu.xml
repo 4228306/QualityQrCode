@@ -2,75 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     android:background="@color/royalblue"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:padding="10dp" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
+    <Button
+        android:id="@+id/login_regist"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginBottom="10dp">
-
-        <ImageView
-            android:id="@+id/login_image"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:contentDescription="@string/content_description"
-            android:layout_gravity="center"
-            android:src="@drawable/personal_login_selector" />
-
-        <Button
-            android:id="@+id/login_regist"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="4"
-            android:background="@drawable/btn_login_regist_selector"
-            android:text="@string/login_regist"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-    </LinearLayout>
+        android:layout_gravity="center|left"
+        android:background="@drawable/btn_login_regist_selector"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/personal_login_selector"
+        android:text="@string/login_regist"
+        android:textSize="20sp" />
 
     <ListView
         android:id="@+id/id_listview_categories"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
-    
-    <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp">
+        android:background="@drawable/warn_selector"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/btn_logout_selector"
+        android:gravity="center"
+        android:text="@string/exit"
+        android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/exit_image"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:clickable="true"
-            android:layout_weight="1"
-            android:contentDescription="@string/content_description"
-            android:layout_gravity="center"
-            android:src="@drawable/btn_logout_selector" />
-
-        <Button
-            android:id="@+id/exit"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/warn_selector"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="4"
-            android:layout_gravity="center"
-            android:text="@string/exit"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-    </LinearLayout>
-    
 </LinearLayout>

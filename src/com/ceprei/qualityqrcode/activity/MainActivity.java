@@ -53,7 +53,7 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 		initMenu();
 		initOnClickListener();
 	}
-
+	
 	private void initUser() {
 		Intent intent = getIntent();
 		user = new User();
@@ -81,9 +81,16 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 
 	private void initFragment() {
 		fragments[0] = new InformationFragment();
+		fragments[1] = new CollectionFragment();
+		fragments[2] = new PersonalCenterFragment();
 		fm = getSupportFragmentManager();
-		fm.beginTransaction().add(R.id.framelayout_main, fragments[0]).commit();
+		fm.beginTransaction()
+			.add(R.id.framelayout_main, fragments[0])
+			.add(R.id.framelayout_main, fragments[1])
+			.add(R.id.framelayout_main, fragments[2]).commit();
+		fm.beginTransaction().hide(fragments[1]).hide(fragments[2]).commit();
 	}
+	
 	private void initButton() {
 		buttons[0] = (Button) findViewById(R.id.btnInformation);
 		buttons[0].setBackgroundResource(R.color.steelblue);
@@ -111,8 +118,6 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 		menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
 		menu.setFadeDegree(0.35f);
 
-		menu.addIgnoredView(findViewById(R.id.framelayout_main).getRootView());
-
 		//menu.setSecondaryShadowDrawable(R.drawable.shadow);
 		//menu.setSecondaryMenu(R.layout.right_menu_frame);
 		//Fragment rightMenuFragment = new RightMenuFragment();
@@ -133,6 +138,10 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 		scanSearch.setOnTouchListener(this);
 	}
 
+	public Fragment getFragment(int id){
+		return fragments[id];
+	}
+	
 	private void changeButtonColor(){
 		buttons[0].setBackgroundResource(position == 0 ? R.color.steelblue : R.color.peachpuff);
 		buttons[1].setBackgroundResource(position == 1 ? R.color.steelblue : R.color.peachpuff);
@@ -147,38 +156,21 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 		if(event.getAction() == MotionEvent.ACTION_DOWN)
 			v.startAnimation(a);
 		ft = fm.beginTransaction();
-		if(fragments[0]!=null )	
-			ft.hide(fragments[0]);
-		if(fragments[1]!=null )
-			ft.hide(fragments[1]);
-		if(fragments[2]!=null)
-			ft.hide(fragments[2]);
+		ft.hide(fragments[0]).hide(fragments[1]).hide(fragments[2]);
 		if(event.getAction() == MotionEvent.ACTION_UP){
 			switch(v.getId()){
 			case R.id.btnInformation:
 				position=0;
-				if(fragments[0] == null){
-					fragments[0]= new InformationFragment();
-					ft.add(R.id.framelayout_main, fragments[0]);
-				}
 				title.setText(R.string.information);
 				ft.show(fragments[0]).commit();
 				break;
 			case R.id.btnCollection:
 				position=1;
-				if(fragments[1] == null){
-					fragments[1]= new CollectionFragment();
-					ft.add(R.id.framelayout_main, fragments[1]);
-				}
 				title.setText(R.string.collection);
 				ft.show(fragments[1]).commit();
 				break;
 			case R.id.btnPersonalCenter:
 				position=2;
-				if(fragments[2] == null){
-					fragments[2]= new PersonalCenterFragment();
-					ft.add(R.id.framelayout_main, fragments[2]);
-				}
 				title.setText(R.string.personal_center);
 				ft.show(fragments[2]).commit();
 				break;
@@ -192,6 +184,20 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 				intent = new Intent(MainActivity.this,CaptureActivity.class);
 				startActivity(intent);
 				break;
+			case R.id.login_regist:
+				if(!isLogin){//没有登陆，跳转登陆
+					intent = new Intent(MainActivity.this,LoginActivity.class);
+					startActivity(intent);
+				}else{//跳转到个人中心
+					getSlidingMenu().showContent();
+					position=2;
+					title.setText(R.string.personal_center);
+					ft.show(fragments[2]).commit();
+				}
+				break;
+			case R.id.exit://退出
+				position=3;
+				onBackPressed();break;
 			}
 			changeButtonColor();
 		}
@@ -210,10 +216,10 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 		ActivityCollector.finishAll();
 	}
 
-
 	@Override
 	protected void onDestroy(){
 		super.onDestroy();
 		ActivityCollector.removeActivity(this);
 	}
+	
 }

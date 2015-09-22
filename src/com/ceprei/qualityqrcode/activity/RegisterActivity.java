@@ -40,7 +40,7 @@ public class RegisterActivity extends BaseActivity {
 				String sex1=((RadioButton)RegisterActivity.this.findViewById(sex.getCheckedRadioButtonId())).getText().toString();
 				Log.i("TAG",userName1+"_"+password1+"_"+name1+"_"+sex1);
 				if(userName1.equals("")){
-					Toast.makeText(RegisterActivity.this, "请输入用户名", Toast.LENGTH_SHORT).show();
+					Toast.makeText(RegisterActivity.this, "请输入邮箱", Toast.LENGTH_SHORT).show();
 					return;
 				}
 				if(password1.equals("")){
@@ -84,11 +84,6 @@ public class RegisterActivity extends BaseActivity {
 		userName=(EditText) findViewById(R.id.userNameRegister);
 		password=(EditText) findViewById(R.id.passwordRegister);
 		passwordRe=(EditText) findViewById(R.id.password1Register);
-		name=(EditText) findViewById(R.id.nameRegister);
-		sex=(RadioGroup) findViewById(R.id.sexRegister);
-		email=(EditText) findViewById(R.id.emailRegister);
-		phone=(EditText) findViewById(R.id.phoneRegister);
-		register=(Button) findViewById(R.id.register_btn1);
 		register=(Button) findViewById(R.id.register_btn1);
 	}
 

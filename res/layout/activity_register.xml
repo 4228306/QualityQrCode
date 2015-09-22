@@ -1,14 +1,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ScrollView1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="vertical" >
-        
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -30,6 +30,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="45dp"
                 android:orientation="horizontal"
+                android:layout_marginTop="10dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" >
 
@@ -46,19 +47,21 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
+                    android:ems="20"
                     android:background="@android:drawable/edit_text"
                     android:hint="@string/userName_tips"
-                    android:inputType="text"
-                    android:maxLength="20"
+                    android:inputType="textEmailAddress"
                     android:textSize="15sp" />
+                <requestFocus />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
                 android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:orientation="horizontal" >
+                android:paddingRight="10dp" >
 
                 <TextView
                     android:layout_width="0dp"
@@ -83,9 +86,10 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
                 android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:orientation="horizontal" >
+                android:paddingRight="10dp" >
 
                 <TextView
                     android:layout_width="0dp"
@@ -108,140 +112,86 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="45dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:paddingTop="10dp"
-                    android:text="@string/name"
-                    android:textSize="15sp" />
-
-                <EditText
-                    android:id="@+id/nameRegister"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:background="@android:drawable/edit_text"
-                    android:hint="@string/name_tips"
-                    android:inputType="text"
-                    android:maxLength="20"
-                    android:textSize="15sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="45dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|left"
-                    android:text="@string/sex"
-                    android:textSize="15sp" />
-
-                <RadioGroup
-                    android:id="@+id/sexRegister"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:orientation="horizontal" >
-
-                    <RadioButton
-                        android:id="@+id/man"
-                        android:layout_gravity="center"
-                        android:checked="true"
-                        android:text="@string/man"
-                        android:textSize="15sp" />
-
-                    <RadioButton
-                        android:id="@+id/woman"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
-                        android:text="@string/woman"
-                        android:textSize="15sp" />
-
-                </RadioGroup>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="45dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:paddingTop="10dp"
-                    android:text="@string/email"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/emailRegister"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:background="@android:drawable/edit_text"
-                    android:inputType="textEmailAddress"
-                    android:maxLength="20"
-                    android:textSize="15sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="45dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:paddingTop="10dp"
-                    android:text="@string/phone"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/phoneRegister"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:background="@android:drawable/edit_text"
-                    android:inputType="phone"
-                    android:maxLength="20"
-                    android:textSize="15sp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/register_btn1"
                 android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="left|center"
+                    android:textSize="16sp"
+                    android:text="@string/identifying_code" />
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:ems="10"
+                    android:hint="@string/code_tips"
+                    android:inputType="textCapCharacters" />
+                
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/info"
+                    android:gravity="left|center"
+                    android:text="@string/refresh_code"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@+drawable/btn_style_one"
-                android:text="@string/register"
-                android:textColor="#ffffff"
-                android:textSize="17sp" />
+                android:layout_marginTop="10dp"              
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" >
+
+                <Button
+                    android:id="@+id/register_btn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_login_selector"
+                    android:text="@string/register"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+            <LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="6dp"
+                    android:text="@string/has_account"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+			        android:layout_marginRight="30dp"
+			        android:layout_marginTop="10dp"
+			        android:padding="8dp"
+			        android:textSize="16sp"
+                    android:background="@drawable/btn_login_selector"
+                    android:text="@string/back_to_login" />
+
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 
