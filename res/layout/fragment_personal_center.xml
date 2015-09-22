@@ -6,34 +6,38 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp" >
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_preference_single_normal" >
 
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_weight="2"
             android:contentDescription="@string/content_description"
             android:src="@drawable/libui_star_full" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/my_name"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="@string/my_name"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/upload_image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
             android:layout_weight="3"
-            android:orientation="vertical" >
+            android:text="@string/upload_image"
+            android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/my_name" />
-
-            <Button
-                android:id="@+id/upload_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/upload_image" />
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -44,7 +48,7 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/my_collection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -55,7 +59,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/my_report"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -67,7 +71,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/my_advice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -87,7 +91,7 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/modify_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -98,7 +102,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/loginOrLogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

@@ -102,10 +102,6 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 	private void initMenu()
 	{
 		Fragment leftMenuFragment = new LeftMenuFragment();
-		Bundle bundle =new Bundle();
-		bundle.putString("username", user.getName());
-		bundle.putBoolean("isLogin", isLogin);
-		leftMenuFragment.setArguments(bundle);
 		setBehindContentView(R.layout.left_menu_frame);
 		fm.beginTransaction().replace(R.id.id_left_menu_frame, leftMenuFragment).commit();
 		SlidingMenu menu = getSlidingMenu();
@@ -127,6 +123,11 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 
 	public void showLeftMenu(View view)
 	{
+		if(isLogin){
+			Bundle bundle =new Bundle();
+			bundle.putString("username", user.getName());
+			bundle.putBoolean("isLogin", isLogin);
+		}
 		getSlidingMenu().showMenu();
 		Toast.makeText(MainActivity.this, "左侧按钮", Toast.LENGTH_SHORT).show();
 	}
