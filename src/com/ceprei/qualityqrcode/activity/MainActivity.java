@@ -40,6 +40,7 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 	private int position=0;
 	private boolean isLogin = false;
 	private User user;
+	private Bundle bundle;
 
 	public void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -55,11 +56,11 @@ public class MainActivity extends SlidingFragmentActivity implements OnTouchList
 	}
 	
 	private void initUser() {
-		Intent intent = getIntent();
 		user = new User();
-		if(intent.hasExtra("isLogin")){
-			isLogin = intent.getBooleanExtra("isLogin", false);
-			user.setName(intent.getStringExtra("username"));
+		bundle = getIntent().getExtras();
+		if(bundle.containsKey("isLogin")){
+			isLogin = bundle.getBoolean("isLogin");
+			user.setName(bundle.getString("username"));
 			Log.i("Login","isLogin："+String.valueOf(isLogin));
 			return;
 		}
